@@ -1,3 +1,4 @@
+#Zamiast zwiększania left/right tylko o 1 lub o tyle ile razy występuje pod rząd, można użyć binsearcha, wtedy jest dużo lepsza złożoność
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         n = len(nums)
