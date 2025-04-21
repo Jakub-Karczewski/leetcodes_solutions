@@ -1,3 +1,4 @@
+#Solution can probably be improved
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
         dict_min, dict_max = dict(), dict()
