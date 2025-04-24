@@ -60,20 +60,22 @@ class Solution:
         my_heap = PriorityQueue()
         for x in nums:
             my_dict[x] = my_dict.get(x, 0) + 1
-        act_capacity = 1
         vals = list(my_dict.items())
+        act_capacity = vals[0][1]
         my_heap.put((vals[0][0], vals[0][1]))
         for i in range (1, len(vals)):
-            print(my_heap.queue)
             if act_capacity + vals[i][1] > k:
                 if vals[i][0] > my_heap.queue[0][0]:
-                    el, c = my_heap.get()
-                    act_capacity -= c
                     while not my_heap.empty() and act_capacity - my_heap.queue[0][1] + vals[i][1] >= k and my_heap.queue[0][0] < vals[i][0]:
                         x, y = my_heap.get()
                         act_capacity -= y
                     my_heap.put((vals[i][0], vals[i][1]))
                     act_capacity += vals[i][1]
+            else:
+                my_heap.put((vals[i][0], vals[i][1]))
+                act_capacity += vals[i][1]
+            #print(my_heap.queue)
+        return my_heap.queue[0][0]
             else:
                 my_heap.put((vals[i][0], vals[i][1]))
                 act_capacity += vals[i][1]
