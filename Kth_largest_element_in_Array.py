@@ -76,7 +76,3 @@ class Solution:
                 act_capacity += vals[i][1]
             #print(my_heap.queue)
         return my_heap.queue[0][0]
-            else:
-                my_heap.put((vals[i][0], vals[i][1]))
-                act_capacity += vals[i][1]
-        return my_heap.queue[0][0]
