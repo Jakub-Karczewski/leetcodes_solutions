@@ -1,4 +1,4 @@
-class Solution:
+class Solution: # This task is horrific, leads to brain trauma, careful approach to this problem is recommended
     def calculateMinimumHP(self, dungeon: List[List[int]]) -> int:
         n = len(dungeon)
         m = len(dungeon[0])
