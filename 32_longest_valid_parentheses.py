@@ -1,5 +1,5 @@
 class Solution:
-    def longestValidParentheses(self, s: str) -> int:
+    def longestValidParentheses(self, s: str) -> int:  # Complexity O(n), first converted every consistent sequence of parenthesis into numbers, then used stack to compress the adjecent closed sequences ( XD ? )
         if len(s) == 0:
             return 0
         arr = []
