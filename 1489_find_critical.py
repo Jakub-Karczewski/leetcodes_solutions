@@ -1,5 +1,8 @@
 class Solution:
     def findCriticalAndPseudoCriticalEdges(self, n: int, edges: List[List[int]]) -> List[List[int]]:
+        # Complexity of my solution is O(E * V * log(E)) 
+        # According to some sources, probably there exists a solution that is O(E log E) or O(E * V), TODO
+        
         class UnionFind:
             def __init__(self,n):
                 self.root = [i for i in range(n)]
@@ -36,7 +39,8 @@ class Solution:
                     weight+=w
             return weight,ans,uf
         for i in range(len(edges)):
-            edges[i].append(i)
+            edges[i].append(i) 
+            # We need to keep track of indexes before sorting
         edges.sort(key = lambda x: x[2])
         visited = [False for _ in range(len(edges))]
         in_mst = [False for _ in range(len(edges))]
